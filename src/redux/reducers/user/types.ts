@@ -1,13 +1,16 @@
 import {Action} from 'redux';
 
 export interface UserSchema {
-  id: string;
+  id?: string;
+  email: string;
   nickname: string;
   name: string;
   avatarURL: string;
   description: string;
   createdAt: string;
   repos: number;
+  following: number;
+  followers: number;
 }
 
 export interface ActionUserSchema extends Action {

@@ -42,11 +42,14 @@ const Aplication = () => {
           <>
             <GithubUser
               nickname={githubUser.nickname}
+              email={githubUser.email}
               name={githubUser.name}
               avatarURL={githubUser.avatarURL}
               description={githubUser.description}
               createdAt={githubUser.createdAt}
               repos={githubUser.repos}
+              followers={githubUser.followers}
+              following={githubUser.following}
             />
 
             <div>
@@ -63,11 +66,12 @@ const Aplication = () => {
 };
 
 const AppContainer = styled.div`
-  height: 100vh;
+  height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: grey;
 
   div {
     width: 300px;

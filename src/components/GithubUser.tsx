@@ -1,28 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Image, Card, Icon, List} from 'semantic-ui-react';
-
-interface GithubUser {
-  nickname: string;
-  avatarURL: string;
-  name: string;
-  createdAt: string;
-  description: string;
-  repos: number;
-  following?: number;
-  followers?: number;
-}
+import {UserSchema} from '../redux/reducers/user/types';
 
 const GithubUser = ({
   nickname,
+  email,
   avatarURL,
   name,
   createdAt,
   description,
   repos,
-  following = 0,
-  followers = 0
-}: GithubUser) => {
+  following,
+  followers
+}: UserSchema) => {
   const formatDate = () => {
     const dateUnformated = new Date(createdAt);
     const dateFromated = `Entrou no Github em: ${dateUnformated.getDate()}/${dateUnformated.getMonth()}/${dateUnformated.getFullYear()}`;
@@ -52,8 +43,8 @@ const GithubUser = ({
 
       <Card.Content extra>
         <a href="/">
-          <Icon name="user" />
-          22 Friends
+          <Icon name="mail" />
+          {email || 'No email provided'}
         </a>
       </Card.Content>
     </CardContainer>

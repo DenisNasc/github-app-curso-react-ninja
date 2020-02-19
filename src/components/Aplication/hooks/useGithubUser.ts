@@ -27,25 +27,32 @@ const useGithubUser = (query: string) => {
           const response = await axios.get(`users/${query}`, {
             headers: {'If-None-Match': alreadyCached?.etag}
           });
+          console.log(response);
 
           if (response.data && !alreadyCached) {
             const {
               id,
+              email,
               login: nickname,
               name,
               avatar_url: avatarURL,
               bio: description,
               created_at: createdAt,
-              public_repos: repos
+              public_repos: repos,
+              following,
+              followers
             } = response.data;
 
             const user = {
               id,
+              email,
               nickname,
               name,
               avatarURL,
               description,
               createdAt,
+              following,
+              followers,
               repos
             };
 
