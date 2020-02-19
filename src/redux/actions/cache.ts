@@ -1,0 +1,2 @@
+export const CACHE_THIS_USER = 'CACHE_THIS_USER';
+export const THIS_USER_IS_CACHED = 'THIS_USER_IS_CACHED';
