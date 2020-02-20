@@ -1,3 +1,2 @@
-const SET_USER = 'SET_USER';
-
-export default SET_USER;
+export const SET_USER = 'SET_USER';
+export const SET_USER_REPOSITORIES = 'SET_USER_REPOSITORIES';

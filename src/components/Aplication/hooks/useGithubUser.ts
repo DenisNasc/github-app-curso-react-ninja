@@ -6,7 +6,9 @@ import axios from '../../../axios';
 import {AplicationSchema} from '../../../redux/reducers/aplication/types';
 import {StoreSchema} from '../../../redux/store/types';
 
-import SET_USER from '../../../redux/actions/user';
+import fetchGithubRepos from '../services/fetchGithubRepos';
+
+import {SET_USER} from '../../../redux/actions/user';
 import {FETCH_USER_SUCCESS, FETCH_USER_FAIL} from '../../../redux/actions/aplication';
 import {CACHE_THIS_USER} from '../../../redux/actions/cache';
 import {CacheSchema} from '../../../redux/reducers/cache/types';
@@ -27,9 +29,10 @@ const useGithubUser = (query: string) => {
           const response = await axios.get(`users/${query}`, {
             headers: {'If-None-Match': alreadyCached?.etag}
           });
-          console.log(response);
 
           if (response.data && !alreadyCached) {
+            const repositories = await fetchGithubRepos(query);
+
             const {
               id,
               email,
@@ -53,7 +56,8 @@ const useGithubUser = (query: string) => {
               createdAt,
               following,
               followers,
-              repos
+              repos,
+              repositories
             };
 
             const {etag} = response.headers;

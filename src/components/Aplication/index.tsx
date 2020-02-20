@@ -5,6 +5,7 @@ import {Button} from 'semantic-ui-react';
 
 import SearchBar from '../SearchBar';
 import GithubUser from '../GithubUser';
+import UserRepositories from '../UserRepositories';
 
 import {UserSchema} from '../../redux/reducers/user/types';
 import {StoreSchema} from '../../redux/store/types';
@@ -27,7 +28,7 @@ const Aplication = () => {
 
     const timer = setTimeout(() => {
       dispatch({type: FETCH_USER_START});
-    }, 500);
+    }, 1000);
 
     handleTimeout(timer);
   };
@@ -40,6 +41,8 @@ const Aplication = () => {
       <AppContainer>
         {fetchUserSuccess ? (
           <>
+            <UserRepositories repositories={githubUser.repositories} />
+
             <GithubUser
               nickname={githubUser.nickname}
               email={githubUser.email}
@@ -51,11 +54,6 @@ const Aplication = () => {
               followers={githubUser.followers}
               following={githubUser.following}
             />
-
-            <div>
-              <Button content="Ver repositórios" />
-              <Button content="Ver favoritos" />
-            </div>
           </>
         ) : (
           <div />
@@ -65,19 +63,12 @@ const Aplication = () => {
   );
 };
 
-const AppContainer = styled.div`
+const AppContainer = styled.main`
   height: calc(100vh - 60px);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
   background: grey;
-
-  div {
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-  }
 `;
 
 export default Aplication;
