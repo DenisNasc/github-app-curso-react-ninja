@@ -12,12 +12,11 @@ const UserRepositories = ({repositories}: UserRepositoriesSchema) => {
   const [currentPage, setCurrentPage] = useState(1);
   const {showRepositories} = useSelector<StoreSchema, AplicationSchema>(state => state.aplication);
 
-  console.log(currentPage);
   return (
     <>
       <ListContainer isVisible={showRepositories} link>
         {repositories
-          .filter((_, i) => i < currentPage * 8 && i > (currentPage - 1) * 8)
+          .filter((_, i) => i < currentPage * 9 && i > (currentPage - 1) * 9)
           .map(repo => (
             <List.Item id="list-item" key={repo.id}>
               <a href={repo.linkTo}>

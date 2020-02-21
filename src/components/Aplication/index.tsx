@@ -44,6 +44,7 @@ const Aplication = () => {
             <UserRepositories repositories={githubUser.repositories} />
 
             <GithubUser
+              id="github-user"
               nickname={githubUser.nickname}
               email={githubUser.email}
               name={githubUser.name}
@@ -66,9 +67,14 @@ const Aplication = () => {
 const AppContainer = styled.main`
   height: calc(100vh - 60px);
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background: grey;
+
+  #github-user {
+    margin-top: 60px;
+  }
 `;
 
 export default Aplication;

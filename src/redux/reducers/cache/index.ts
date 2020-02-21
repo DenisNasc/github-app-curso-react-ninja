@@ -10,11 +10,16 @@ const cache = (state = initialState, action: ActionCacheSchema) => {
     case CACHE_THIS_USER: {
       const alreadyCached = state.users.find(
         (cachedUser: UserETagSchema) =>
-          cachedUser.nickname.toLowerCase() === action.payload?.query.toLowerCase()
+          cachedUser.etag.toLowerCase() === action.payload?.etag.toLowerCase()
+      );
+
+      const updatedUsersCached = state.users.filter(
+        (cachedUser: UserETagSchema) =>
+          !(cachedUser.nickname.toLowerCase() === action.payload?.query.toLowerCase())
       );
 
       if (alreadyCached) {
-        return {...state};
+        return {...state, users: [...updatedUsersCached, {...action.payload}]};
       }
 
       return {...state, users: [...state.users, {...action.payload}]};

@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import {useSelector} from 'react-redux';
 import styled from 'styled-components';
-import {Search} from 'semantic-ui-react';
+import {Image, Search} from 'semantic-ui-react';
 import {CacheSchema} from '../redux/reducers/cache/types';
 import {StoreSchema} from '../redux/store/types';
 
@@ -31,6 +31,13 @@ const SearchBar = ({callback, query}: SearchBar) => {
 
   return (
     <SearchBarContainer>
+      <div id="title">
+        <Image
+          src="/home/denis/Documentos/developer/github-app/src/assets/github.png"
+          alt="Github logo"
+        />
+        <h1>Github Aplication</h1>
+      </div>
       <Search
         id="search"
         value={query}
@@ -45,14 +52,27 @@ const SearchBar = ({callback, query}: SearchBar) => {
 
 const SearchBarContainer = styled.header`
   width: 100vw;
-  height: 60px;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  background: purple;
+  justify-content: space-between;
+  background: hsl(180, 75%, 20%);
+
+  #title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 246px;
+    width: 413px;
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: bold;
+    }
+  }
 
   .search {
-    margin-right: 100px;
+    margin-right: 246px;
   }
 `;
 

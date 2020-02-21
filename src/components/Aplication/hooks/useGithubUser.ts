@@ -29,8 +29,9 @@ const useGithubUser = (query: string) => {
           const response = await axios.get(`users/${query}`, {
             headers: {'If-None-Match': alreadyCached?.etag}
           });
+          console.log(response);
 
-          if (response.data && !alreadyCached) {
+          if (response.data) {
             const repositories = await fetchGithubRepos(query);
 
             const {
@@ -70,10 +71,11 @@ const useGithubUser = (query: string) => {
           if (err.response && err.response.status === 304) {
             dispatch({type: SET_USER, payload: {...alreadyCached}});
             dispatch({type: FETCH_USER_SUCCESS});
-            return;
+            console.log('passando por aqui 2');
+          } else {
+            console.log(err);
+            dispatch({type: FETCH_USER_FAIL});
           }
-          console.log(err);
-          dispatch({type: FETCH_USER_FAIL});
         }
       };
 

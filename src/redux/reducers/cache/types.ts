@@ -11,5 +11,5 @@ export interface CacheSchema {
 
 export interface ActionCacheSchema extends Action {
   type: string;
-  payload?: {query: string};
+  payload?: {etag: string; query: string};
 }
