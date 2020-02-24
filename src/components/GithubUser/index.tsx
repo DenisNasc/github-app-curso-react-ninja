@@ -23,45 +23,48 @@ const GithubUser = ({
   return (
     <>
       <CardContainer>
-        <a href={`https://github.com/${nickname}`}>
-          <Image src={avatarURL} wrapped />
-        </a>
-        <Card.Content id="content-1">
-          <Card.Header id="name">{name}</Card.Header>
+        <Card>
+          <a href={`https://github.com/${nickname}`}>
+            <Image src={avatarURL} wrapped />
+          </a>
+          <Card.Content id="content-1">
+            <Card.Header id="name">{name}</Card.Header>
 
-          <Card.Meta id="created-at">
-            <span>{`Entrou no Github em: ${formatDate(createdAt)}`}</span>
-          </Card.Meta>
+            <Card.Meta id="created-at">
+              <span>{`Entrou no Github em: ${formatDate(createdAt)}`}</span>
+            </Card.Meta>
 
-          <Card.Description id="description">{description}</Card.Description>
-        </Card.Content>
-        <Card.Content id="repos">
-          <List id="list">
-            <List.Item id="list-item">{`Repositórios: ${repos}`}</List.Item>
-            <List.Item id="list-item">{`Seguidores: ${followers}`}</List.Item>
-            <List.Item id="list-item">{`Seguindo: ${following}`}</List.Item>
-          </List>
-        </Card.Content>
+            <Card.Description id="description">{description}</Card.Description>
+          </Card.Content>
+          <Card.Content id="repos">
+            <List id="list">
+              <List.Item id="list-item">{`Repositórios: ${repos}`}</List.Item>
+              <List.Item id="list-item">{`Seguidores: ${followers}`}</List.Item>
+              <List.Item id="list-item">{`Seguindo: ${following}`}</List.Item>
+            </List>
+          </Card.Content>
 
-        <Card.Content extra>
-          <span>
-            <Icon name="mail" />
-            {email || 'No email provided'}
-          </span>
-        </Card.Content>
+          <Card.Content extra>
+            <span>
+              <Icon name="mail" />
+              {email || 'No email provided'}
+            </span>
+          </Card.Content>
 
-        <Button
-          primary
-          id="button-repositories"
-          content="Ver repositórios"
-          onClick={() => dispatch({type: TOGGLE_SHOW_REPOSITORIES})}
-        />
+          <Button
+            primary
+            id="button-repositories"
+            content="Ver repositórios"
+            onClick={() => dispatch({type: TOGGLE_SHOW_REPOSITORIES})}
+          />
+        </Card>
       </CardContainer>
     </>
   );
 };
 
-const CardContainer = styled(Card)`
+const CardContainer = styled.div`
+  margin-top: 60px;
   #content-1 {
     width: 100%;
     padding: 10px;

@@ -41,8 +41,6 @@ const Aplication = () => {
       <AppContainer>
         {fetchUserSuccess ? (
           <>
-            <UserRepositories repositories={githubUser.repositories} />
-
             <GithubUser
               id="github-user"
               nickname={githubUser.nickname}
@@ -55,6 +53,7 @@ const Aplication = () => {
               followers={githubUser.followers}
               following={githubUser.following}
             />
+            <UserRepositories repositories={githubUser.repositories} />
           </>
         ) : (
           <div />
@@ -65,16 +64,12 @@ const Aplication = () => {
 };
 
 const AppContainer = styled.main`
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background: grey;
-
-  #github-user {
-    margin-top: 60px;
-  }
 `;
 
 export default Aplication;

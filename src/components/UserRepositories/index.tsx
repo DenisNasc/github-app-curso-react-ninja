@@ -14,22 +14,24 @@ const UserRepositories = ({repositories}: UserRepositoriesSchema) => {
 
   return (
     <>
-      <ListContainer isVisible={showRepositories} link>
-        {repositories
-          .filter((_, i) => i < currentPage * 9 && i > (currentPage - 1) * 9)
-          .map(repo => (
-            <List.Item id="list-item" key={repo.id}>
-              <a href={repo.linkTo}>
-                <Icon name="triangle right" />
-                <List.Content>
-                  <List.Header>{repo.name}</List.Header>
-                  <List.Description>
-                    {`Repositório criado em: ${formatDate(repo.createdAt)}`}
-                  </List.Description>
-                </List.Content>
-              </a>
-            </List.Item>
-          ))}
+      <ListContainer isVisible={showRepositories}>
+        <List id="list" link>
+          {repositories
+            .filter((_, i) => i < currentPage * 9 && i > (currentPage - 1) * 9)
+            .map(repo => (
+              <List.Item id="list-item" key={repo.id}>
+                <a href={repo.linkTo}>
+                  <Icon name="triangle right" />
+                  <List.Content>
+                    <List.Header>{repo.name}</List.Header>
+                    <List.Description>
+                      {`Repositório criado em: ${formatDate(repo.createdAt)}`}
+                    </List.Description>
+                  </List.Content>
+                </a>
+              </List.Item>
+            ))}
+        </List>
         <Pagination
           id="pagination"
           boundaryRange={0}
@@ -48,25 +50,32 @@ const UserRepositories = ({repositories}: UserRepositoriesSchema) => {
   );
 };
 
-const ListContainer = styled(List)`
-  display: ${props => (props.isVisible ? 'flex' : 'none')};
-  position: relative;
+const ListContainer = styled.div`
+  display: ${(props: {isVisible: boolean}) => (props.isVisible ? 'flex' : 'none')};
   flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 216px;
+  bottom: 20px;
   align-items: center;
-  height: 530px;
-  width: 300px;
+  height: 230px;
+  width: 900px;
+  background: #fff;
 
-  #list-item {
-    margin-top: 20px;
-    width: 100%;
-    a {
-      display: flex;
+  #list {
+    display: flex;
+    #list-item {
+      margin-top: 20px;
+      width: 100%;
+      a {
+        display: flex;
+      }
     }
-  }
 
-  #pagination {
-    position: absolute;
-    bottom: 0;
+    #pagination {
+      position: absolute;
+      bottom: ;
+    }
   }
 `;
 
