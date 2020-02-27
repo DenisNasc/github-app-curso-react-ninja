@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.7b3c58a7.chunk.css",
-    "main.js": "/static/js/main.0526219a.chunk.js",
-    "main.js.map": "/static/js/main.0526219a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.98372b41.js",
-    "runtime-main.js.map": "/static/js/runtime-main.98372b41.js.map",
-    "static/css/2.0252c3bb.chunk.css": "/static/css/2.0252c3bb.chunk.css",
-    "static/js/2.2a6336fe.chunk.js": "/static/js/2.2a6336fe.chunk.js",
-    "static/js/2.2a6336fe.chunk.js.map": "/static/js/2.2a6336fe.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.2dacc3c70fc6c8748b6fec62a13651b8.js": "/precache-manifest.2dacc3c70fc6c8748b6fec62a13651b8.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.0252c3bb.chunk.css.map": "/static/css/2.0252c3bb.chunk.css.map",
-    "static/css/main.7b3c58a7.chunk.css.map": "/static/css/main.7b3c58a7.chunk.css.map",
-    "static/js/2.2a6336fe.chunk.js.LICENSE.txt": "/static/js/2.2a6336fe.chunk.js.LICENSE.txt",
-    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff"
+    "main.css": "/github-app-curso-react-ninja/static/css/main.7b3c58a7.chunk.css",
+    "main.js": "/github-app-curso-react-ninja/static/js/main.0526219a.chunk.js",
+    "main.js.map": "/github-app-curso-react-ninja/static/js/main.0526219a.chunk.js.map",
+    "runtime-main.js": "/github-app-curso-react-ninja/static/js/runtime-main.e38e1aac.js",
+    "runtime-main.js.map": "/github-app-curso-react-ninja/static/js/runtime-main.e38e1aac.js.map",
+    "static/css/2.e754eacf.chunk.css": "/github-app-curso-react-ninja/static/css/2.e754eacf.chunk.css",
+    "static/js/2.a89a533b.chunk.js": "/github-app-curso-react-ninja/static/js/2.a89a533b.chunk.js",
+    "static/js/2.a89a533b.chunk.js.map": "/github-app-curso-react-ninja/static/js/2.a89a533b.chunk.js.map",
+    "index.html": "/github-app-curso-react-ninja/index.html",
+    "precache-manifest.c0a135e2ec75192661a3a0403fe84f84.js": "/github-app-curso-react-ninja/precache-manifest.c0a135e2ec75192661a3a0403fe84f84.js",
+    "service-worker.js": "/github-app-curso-react-ninja/service-worker.js",
+    "static/css/2.e754eacf.chunk.css.map": "/github-app-curso-react-ninja/static/css/2.e754eacf.chunk.css.map",
+    "static/css/main.7b3c58a7.chunk.css.map": "/github-app-curso-react-ninja/static/css/main.7b3c58a7.chunk.css.map",
+    "static/js/2.a89a533b.chunk.js.LICENSE.txt": "/github-app-curso-react-ninja/static/js/2.a89a533b.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/github-app-curso-react-ninja/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.98372b41.js",
-    "static/css/2.0252c3bb.chunk.css",
-    "static/js/2.2a6336fe.chunk.js",
+    "static/js/runtime-main.e38e1aac.js",
+    "static/css/2.e754eacf.chunk.css",
+    "static/js/2.a89a533b.chunk.js",
     "static/css/main.7b3c58a7.chunk.css",
     "static/js/main.0526219a.chunk.js"
   ]
